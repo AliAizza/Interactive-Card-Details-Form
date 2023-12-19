@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+}
+
+section{
+    display: flex;
+    width: 100%;
+    max-height: 100vh;
+    overflow: hidden;
+}
+
+.background{
+    z-index: -2;
+}
+
+.mobile{
+    display: none;
+}
+
+.co{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 200px;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 35%;
+}
+
+.date_cvc{
+    display: flex;
+}
+
+.date_cvc div{
+    flex: 1;
+}
+
+.MMYY{
+    display: flex;
+}
+
+.MMYY input{
+    width: 45%;
+    margin-right: auto;
+}
+
+.cvc{
+    margin-left: 15px;
+}
+
+input{
+    outline: none;
+    border: 1px solid hsl(279, 6%, 55%);
+    border-radius: 7px;
+    padding: 8px 12px;
+    width: 100%;
+    z-index: 2;
+}
+
+input:focus{
+    border-color: hsl(249, 99%, 64%);
+}
+
+input::placeholder{
+    color: hsl(270, 3%, 87%);
+}
+
+.error{
+    margin-bottom: 20px;
+    color: white;
+}
+
+.errordatecvc{
+    width: 100%;
+    display: flex;
+}
+
+.errordatecvc .error{
+    flex: 1;
+}
+
+.errordatecvc #errorcvc{
+    margin-left: 15px;
+}
+
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+p{
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+button{
+    width: 100%;
+    margin-top: 10px;
+    padding: 15px;
+    color: white;
+    outline: none;
+    border: none;
+    background: hsl(278, 68%, 11%);
+    border-radius: 7px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover{
+    background: hsl(278, 74%, 21%);
+    transform: scale(1.03);
+}
+
+.front{
+    position: absolute;
+    top: 135px;
+    left: 230px;
+}
+
+.back{
+    position: absolute;
+    bottom: 135px;
+    left: 300px;
+    z-index: -1;
+}
+
+.card{
+    width: 350px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 60px rgba(0, 0, 0, 0.5);
+}
+
+.front .logo{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 70px;
+}
+
+.front .info{
+    position: absolute;
+    color: white;
+    bottom: 20px;
+    width: 350px;
+}
+
+.front .info h2 {
+    letter-spacing: 2px;
+    width: fit-content;
+    margin: 0 auto;
+    margin-bottom: 15px;
+}
+
+.front .info .nmy{
+    display: flex;
+    justify-content: space-between;
+    width: 85%;
+    margin: 0 auto;
+}
+
+.back p{
+    position: absolute;
+    color: white;
+    top: 86px;
+    right: 45px;
+}
+
+#thankyou{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#thankyou img{
+    margin-bottom: 25px;
+}
+
+#thankyou h2{
+    margin-bottom: 15px;
+}
+
+#thankyou p{
+    margin-bottom: 35px;
+    font-size: 15px;
+    color: hsl(279, 6%, 55%);
+}
+
+input.invalid{
+    border-color: hsl(0, 100%, 66%);
+}
+
+@media screen and (max-width: 1350px){
+    .background .desktop{
+        height: 100vh;
+    }
+}
+
+@media screen and (max-width: 1250px) {
+    .co{
+        margin-left: 100px;
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    .co{
+        margin-left: 0px;
+    }
+    .front, .back{
+        transform: scale(0.8);
+    }
+    .front{
+        left: 120px;
+        top: 200px;
+    }
+    .back{
+        left: 180px;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    .content{
+        width: 60%;
+    }
+    .background .desktop {
+        width: 90%;
+    }
+    .front, .back{
+        transform: scale(0.6);
+    }
+    .front{
+        left: 20px;
+    }
+    .back{
+        left: 80px;
+        bottom: 180px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .front, .back{
+        left: -60px;
+    }
+    .content{
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    section{
+        flex-direction: column;
+        overflow: scroll;
+    }
+    .desktop{
+        display: none;
+    }
+    .mobile{
+        display: block;
+        width: 100%;
+        margin-bottom: 100px;
+    }
+    .front, .back{
+        transform: scale(0.9);
+    }
+    .front{
+        z-index: 1;
+        top: 180px;
+        left: 20px;
+    }
+    .back{
+        top: 70px;
+        left: auto;
+        right: 20px;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .front, .back{
+        transform: scale(0.6);
+    }
+    .front{
+        top: 120px;
+        left: -25px;
+    }
+    .back{
+        top: -15px;
+        right: -25px;
+    }
+}

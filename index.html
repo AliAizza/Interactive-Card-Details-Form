@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Card Details Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section>
+    <div class="background">
+      <img src="images/bg-main-desktop.png" class="desktop">
+      <img src="images/bg-main-mobile.png" class="mobile">
+    </div>
+    <div class="co">
+      <div class="content">
+        <div id="content">
+          <p>CARDHOLDER NAME</p>
+          <input id="inname" type="text" placeholder="e.g. Jane Applessed" maxlength="30">
+          <p class="error" id="errorname">Wrong format</p>
+          <p>CARD NUMBER</p>
+          <input id="innumber" type="number" placeholder="e.g 1234 5678 9123 0000" oninput="this.value = this.value.slice(0, 16)">
+          <p class="error" id="errornumber">Wrong format</p>
+          <div class="date_cvc">
+            <div class="date">
+              <p>EXP. DATE (MM/YY)</p>
+              <div class="MMYY">
+                <input id="inmm" type="number" placeholder="MM" oninput="this.value = this.value.slice(0, 2)">
+                <input id="inyy" type="number" placeholder="YY" oninput="this.value = this.value.slice(0, 2)">
+              </div>
+            </div>
+            <div class="cvc">
+              <p>CVC</p>
+              <input id="incvc" type="number" placeholder="e.g. 123" oninput="this.value = this.value.slice(0, 3)">
+            </div>
+          </div>
+          <div class="errordatecvc">
+            <p class="error" id="errordate">Wrong format</p>
+            <p class="error" id="errorcvc">Wrong format</p>
+          </div>
+        </div>
+        <div id="thankyou">
+          <img src="images/icon-complete.svg">
+          <h2>THANK YOU!</h2>
+          <p>We've added your card details</p>
+        </div>
+        <button id="confirm" type="submit" onclick="submit()">Confirm</button>
+      </div>
+    </div>
+    <div class="front">
+      <img src="images/bg-card-front.png" class="card">
+      <img src="images/card-logo.svg" class="logo">
+      <div class="info">
+        <h2 id="number">0000 0000 0000 0000</h2>
+        <div class="nmy">
+          <p id="name">JANE APPLESEED</p>
+          <p id="my">00/00</p>
+        </div>
+      </div>
+    </div>
+    <div class="back">
+      <img src="images/bg-card-back.png" class="card">
+      <p id="outcvc">000</p>
+    </div>
+  </section>
+  <script src="script.js"></script>
+</body>
+</html>
